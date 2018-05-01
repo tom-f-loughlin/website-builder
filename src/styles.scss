@@ -1,92 +1,194 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'variables';
 
-html, body {
-    height: 100%;
-    width:100%;
-}
+@import 'variables';
+@import 'fontface';
+html,
 body {
-    font-family: 'Trebuchet MS', 'Tahoma', sans-serif ;
-    background-color:$bg-color;
+    height: 100%;
+    width: 100%;
+    position: relative;
 }
-.ff_font {
-    font-family: 'Tangerine', cursive;
+
+body {
+    font-family: $para-font, Verdana;
+    background-color: $bg-color;
 }
+
+.main-wrapper {
+    background: url(./assets/imgs/bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    filter: sepia(1);
+    &::before {
+        content: '';
+        height: 100%;
+        width: calc(70% - 6px);
+        opacity: 1;
+        position: absolute;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.27636564879858194) 44%, rgba(120, 85, 43, 1) 100%);
+    }
+}
+
 main {
     width: 70%;
 }
+
 aside {
     width: 30%;
+    &::before {
+        content: '';
+        background: url(./assets/imgs/snow.png);
+        height: 100%;
+        width: 29%;
+        opacity: 0.5;
+        position: absolute;
+    }
 }
-header {
-    width: 100%;
-    height: 60px;
-    // background-color: #8d0007;
-    // box-shadow: 0px 4px 10px 0px #f5897e;
-    // margin-bottom: 4px;
-}
+
 .main-cont {
-    // margin-top: 10px;
-    // height: calc(100% - 70px);  
-    height: 100%;  
-}
-main {
-    // background-color: red;
     height: 100%;
 }
-aside {
-    height: 100%;    
-    background-color: $tert-grn;
-    
+
+.content {
+    height: 100%;
+    background-color: $burgandy;
+    border-left: 8px double $light-color;
 }
-
-
-
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
+
 body {
-	line-height: 1;
+    line-height: 1;
 }
-ol, ul {
-	list-style: none;
+
+ol,
+ul {
+    list-style: none;
 }
-blockquote, q {
-	quotes: none;
+
+blockquote,
+q {
+    quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }

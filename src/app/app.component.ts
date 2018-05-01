@@ -1,11 +1,22 @@
 import { Component } from '@angular/core';
-import { Http } from "@angular/http";
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app works!';  
+
+  private fakeLoad = true;
+
+  constructor() {
+    setTimeout(() => {
+      this.fakeLoad = false;
+    }, 3000);
+  }
+
+  get loading() {
+    return this.fakeLoad;
+  }
 }

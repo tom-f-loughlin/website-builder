@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'Hamillton Demo';
+    src: url('HamilltonDemo.woff2') format('woff2'),
+        url('HamilltonDemo.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Silent Reaction';
+    src: url('SilentReaction.woff2') format('woff2'),
+        url('SilentReaction.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Z.swsh';
+    src: url('Annisa-Slant.woff2') format('woff2'),
+        url('Annisa-Slant.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Dominique';
+    src: url('DominiqueRegular.woff2') format('woff2'),
+        url('DominiqueRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Antro Vectra';
+    src: url('AntroVectra.woff2') format('woff2'),
+        url('AntroVectra.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
