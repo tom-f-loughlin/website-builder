@@ -1,0 +1,29 @@
+@import 'variables';
+section {
+    height: 100%;
+    width: 100%;
+    background-color: $dark-grn;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    h1 {
+        font-size: 2em;
+    }
+    small {
+        a {
+            color: $light-color;
+            &:hover {
+                color: $burgandy
+            }
+        }
+    }
+    img {
+        height: 200px;
+        width: 200px;
+        background-color: white;
+        border-radius: 50%;
+        animation: swing 5s infinite;
+    }
+}

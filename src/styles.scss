@@ -14,48 +14,6 @@ body {
     background-color: $bg-color;
 }
 
-.main-wrapper {
-    background: url(./assets/imgs/bg.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    filter: sepia(1);
-    &::before {
-        content: '';
-        height: 100%;
-        width: calc(70% - 6px);
-        opacity: 1;
-        position: absolute;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.27636564879858194) 44%, rgba(120, 85, 43, 1) 100%);
-    }
-}
-
-main {
-    width: 70%;
-}
-
-aside {
-    width: 30%;
-    &::before {
-        content: '';
-        background: url(./assets/imgs/snow.png);
-        height: 100%;
-        width: 29%;
-        opacity: 0.5;
-        position: absolute;
-    }
-}
-
-.main-cont {
-    height: 100%;
-}
-
-.content {
-    height: 100%;
-    background-color: $burgandy;
-    border-left: 8px double $light-color;
-}
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126

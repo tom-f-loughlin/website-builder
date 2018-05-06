@@ -1,0 +1,43 @@
+.gmap {
+    height: 400px;
+    width: 400px;
+}
+
+.location-wrap {
+    display: flex;
+    height: 100%;
+}
+
+.content {
+    width: 60%;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    h1 {
+        // font-family: 'Love & Sunshine';
+        font-size: 4em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 16px;
+    }
+}
+
+.side {
+    width: 40%;
+    .gmap {
+        height: 50%;
+        width: 100%
+    }
+    .hotel {
+        background: url(../../../assets/imgs/location2.jpg);
+        height: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+}

@@ -1,108 +1,79 @@
 @import 'variables';
-.header-nav {
-    display: inline-flex;
-    justify-content: space-around
-}
 
-section {
-    display: flex
-}
 
-.banner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: space-around;
-    height: 80%;
-    width: 100%;
-    overflow: hidden;
-    color: $light-color;
-    .ws-content {
-        display: flex;
-        flex-direction: column;
-    }
-    .title,
-    .signature {
-        line-height: 1.5em;
-    }
-    .title {
-        font-size: 5em;
-        font-family: 'SkinnyChick';
-        // border-top: 2px dotted $light-color;
-        border-right: none;
-        border-left: none; // color: white;
-        animation: 1s ease-out 0s 1 fadeInLeftBig;
-    }
-    .signature {
-        font-size: 3em;    
-        font-family: 'Antro Vectra';
-        text-align: center;
-    }
-    .clip {
-        display: flex;
-        flex-direction: column;
-        font-family: $title-font, cursive;
-        justify-content: center;
-        text-align: center;
-        font-size: 24px;
-    }
-}
-
+// TODO make all styles into styling folder. 
+// Animations classes in one file
 @keyframes fadeInLeftBig {
     from {
-      opacity: 0;
-      transform: translate3d(-2000px, 0, 0);
+        opacity: 0;
+        transform: translate3d(-2000px, 0, 0);
     }
-  
     to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
     }
-  }
-  
-  .fadeInLeftBig {
+}
+
+.fadeInLeftBig {
     animation-name: fadeInLeftBig;
-  }
+}
+
+@keyframes swing {
+    20% {
+        transform: rotate3d(0, 0, 1, 15deg);
+    }
+    40% {
+        transform: rotate3d(0, 0, 1, -10deg);
+    }
+    60% {
+        transform: rotate3d(0, 0, 1, 5deg);
+    }
+    80% {
+        transform: rotate3d(0, 0, 1, -5deg);
+    }
+    to {
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+}
+
+.swing {
+    transform-origin: top center;
+    animation-name: swing;
+}
 
 .animation {
-    font-size:60px;
-	top:45%;
-	left:0%;
-	position:absolute;
-	font-family:'Antro Vectra';
-	animation-name:pop;
-	animation-duration:2s;
-}
-@keyframes pop{
-	from{background-color:transparent;left:0%;}
-	100%{background-color:rgba(200,0,0,0.3);left:39%;}
+    font-size: 60px;
+    top: 45%;
+    left: 0%;
+    position: absolute;
+    font-family: 'Antro Vectra';
+    animation-name: pop;
+    animation-duration: 2s;
 }
 
-.missle-toe {
-    height: calc(10% - 2px);
-    width: 100%;
-    background: url(../assets/imgs/mtoe.png) center center no-repeat;
-    background-size: cover;
-    &.top {
-        border-bottom: 2px solid $light-color;
-        transform: rotate(180deg);
+@keyframes pop {
+    from {
+        background-color: transparent;
+        left: 0%;
     }
-    &.bottom {
-        border-top: 2px solid $light-color;
+    100% {
+        background-color: rgba(200, 0, 0, 0.3);
+        left: 39%;
     }
+}
+@keyframes fadeInLeftBig {
+  from {
+    opacity: 0;
+    transform: translate3d(-2000px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
-.main-wrapper {
-    // &:after {
-    //     background: url(../assets/imgs/snow.png); 
-    //     background-size: contain;
-    //     width: 50%;
-    //     content: '';
-    //     bottom: 0;
-    //     left: 0;
-    //     position: absolute;
-    //     display: block;
-    //     height: 66%;
-    // }
+.fadeInLeftBig {
+  animation-name: fadeInLeftBig;
 }
+

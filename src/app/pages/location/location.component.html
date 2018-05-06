@@ -1,0 +1,24 @@
+<section class="location-wrap">
+    <article class="content">
+        <div class="back">
+            <button routerLink='/'>Back</button>
+        </div>
+        <h1>Location</h1>
+        <h2>
+            Hotel Pod Zeleným
+        </h2>
+        <p>
+            nám. Svobody 37 Starý Bohumín 735 81 Česká republika
+        </p>
+        <p>
+            If you would like help finding it you a way to the location 
+            you can check out these sites
+        </p>
+    </article>
+    <aside class="side">
+        <div class="hotel"></div>
+        <agm-map class="gmap" [latitude]="49.9195721" [longitude]="18.3285126" [zoom]="15">
+            <agm-marker [latitude]="49.9195721" [longitude]="18.3285126"></agm-marker>
+        </agm-map>
+    </aside>
+</section>

@@ -1,0 +1,107 @@
+@import 'variables';
+.bg {
+    position: absolute;
+    top: 0;
+    background: url(../../../assets/imgs/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: calc(60% - 6px);
+    height: 100%;
+    z-index: -1;
+    filter: sepia(1);
+    &::before {
+        content: '';
+        height: 100%;
+        width: 100%;
+        opacity: 1;
+        z-index: 0;
+        position: absolute;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.27636564879858194) 44%, rgba(120, 85, 43, 1) 100%);
+    }
+}
+
+main {
+    width: 60%;
+}
+
+aside {
+    width: 40%;
+    &::before {
+        content: '';
+        background: url(../../../assets/imgs/snow.png);
+        height: 100%;
+        width: 39%;
+        opacity: 0.5;
+        position: absolute;
+    }
+}
+
+.main-cont {
+    height: 100%;
+    position: relative;
+}
+
+.content {
+    height: 100%;
+    background-color: $burgandy;
+    border-left: 8px double $light-color;
+}
+
+section {
+    display: flex
+}
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    height: 80%;
+    width: 100%;
+    overflow: hidden;
+    color: $light-color;
+    .ws-content {
+        display: flex;
+        flex-direction: column;
+    }
+    .title,
+    .signature {
+        line-height: 1.5em;
+    }
+    .title {
+        font-size: 5em;
+        font-family: 'SkinnyChick'; // border-top: 2px dotted $light-color;
+        border-right: none;
+        border-left: none; // color: white;
+        // animation: 1s ease-out 0s 1 fadeInLeftBig;
+    }
+    .signature {
+        font-size: 3em;
+        font-family: 'Antro Vectra';
+        text-align: center;
+    }
+    .clip {
+        display: flex;
+        flex-direction: column;
+        font-family: $title-font, cursive;
+        justify-content: center;
+        text-align: center;
+        font-size: 24px;
+    }
+}
+
+.missle-toe {
+    height: calc(10% - 2px);
+    width: 100%;
+    background: url(../../../assets/imgs/mtoe.png) center center no-repeat;
+    background-size: cover;
+    &.top {
+        border-bottom: 2px solid $light-color;
+        transform: rotate(180deg);
+    }
+    &.bottom {
+        border-top: 2px solid $light-color;
+    }
+}

@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@agm/core@^1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@agm/core/-/core-1.0.0-beta.2.tgz#da15c0a5e86fe9e1178f14c36a3e0ffc14f9ad77"
+
 "@angular/cli@1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-1.0.0.tgz#7bfde1e7c5f28bf5bed4dda1352ee67ee887302f"
@@ -3024,9 +3028,9 @@ lodash@^3.8.0:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^4.0.0, lodash@^4.11.1, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.5.0:
-  version "4.17.4"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
+lodash@^4.0.0, lodash@^4.11.1, lodash@^4.14.0, lodash@^4.17.10, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.5.0:
+  version "4.17.10"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
 lodash@~4.16.4:
   version "4.16.6"
@@ -4980,6 +4984,10 @@ ts-node@~2.0.0:
     v8flags "^2.0.11"
     xtend "^4.0.0"
     yn "^1.2.0"
+
+ts-option@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/ts-option/-/ts-option-1.1.4.tgz#87fe2e2b32c23a6a0d42bcb30bb53e8794580d64"
 
 tsconfig@^5.0.2:
   version "5.0.3"
