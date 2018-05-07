@@ -1,0 +1,25 @@
+@import 'variables';
+article {
+    // width: 50%;
+}
+section {
+    display: flex;
+    height: 100%;
+}
+
+.content {
+    width: 60%;
+    padding: 1em;
+    color: white;
+    background-color: $red;
+    h1 {
+        font-family: $dom;
+        font-size: 2em;
+    }
+}
+.side {
+    width: 40%;
+    div {
+        height: 50%;
+    }
+}

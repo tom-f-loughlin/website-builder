@@ -8,10 +8,10 @@ import { PAGES } from './pages/pages.module';
 function findPage(componentName: string) {
     const foundPage = PAGES.find(v => v.name === componentName);
     if (!foundPage) {
-        window.location.href = '';
+        // window.location.href = '';
     }
     return foundPage;
-}   
+}
 
 export const AppRoutes: Routes = [
     {
@@ -25,6 +25,14 @@ export const AppRoutes: Routes = [
     {
         path: 'location',
         component: findPage('LocationComponent')
+    },
+    {
+        path: 'theme',
+        component: findPage('ThemeComponent')
+    },
+    {
+        path: 'travelling',
+        component: findPage('TravellingComponent')
     },
     {
         path: '**',

@@ -1,3 +1,4 @@
+@import 'variables';
 .gmap {
     height: 400px;
     width: 400px;
@@ -10,21 +11,46 @@
 
 .content {
     width: 60%;
-    margin-left: 10px;
+    padding: 1em;
     display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    h1 {
-        // font-family: 'Love & Sunshine';
-        font-size: 4em;
+    flex-direction: column; // align-content: center;
+    // justify-content: center;
+    border-right: 6px double white;
+    background-color: $real-pri-grn;
+    color: white;
+    
+    .location-information {
+        width: 80%;
+        margin: auto 0 30% 0;
     }
-    h2 {
-        font-size: 2em;
+    .divider{
+        background: url(../../../assets/imgs/hr1.png);
+        width: 100%;
+        height: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    h1 {
+        margin: 0.5em 0 0 0; // font-family: 'Night At The Opera NF';
+        font-family: 'Dominique';
+        font-size: 3em;
+        line-height: 1em;
+        text-align: center;        
+    }
+    h2,
+    span {
+        margin: 0.1em 0; // font-family: 'Dominique';
+        font-size: 1.5em;
+        line-height: 1em;
     }
     p {
-        font-size: 16px;
+        margin: 0.1em 0;
+        font-size: 1.2em;
+        font-weight: bold;
+        line-height: 1em;
     }
+
 }
 
 .side {

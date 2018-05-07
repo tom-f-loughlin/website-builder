@@ -29,12 +29,12 @@ const navObjs: NavItems[] = [
     },
     {
         nameTag: 'Travelling',
-        link: '',
+        link: 'travelling',
         active: false
     },
     {
         nameTag: 'Theme',
-        link: '',
+        link: 'theme',
         active: false
     },
     {

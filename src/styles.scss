@@ -13,7 +13,20 @@ body {
     font-family: $para-font, Verdana;
     background-color: $bg-color;
 }
-
+.btn {
+    border: 1px groove whitesmoke;
+    padding: 10px;
+    min-width: 80px;
+    color: white;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+    font-family: 'Dominique';
+    font-size: 16px;
+    &:hover {
+        background: rgba(0, 0, 0, 0.3);
+    }
+}
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126

@@ -1,0 +1,27 @@
+@import 'variables';
+section {
+    height: 100%;
+    display: flex;
+}
+
+article {
+    width: 50%;
+}
+
+.left {}
+
+.right {}
+
+.red,
+.green {
+    border-radius: 50%;
+    height: 100%;
+}
+
+.red {
+    background-color: $red;
+}
+
+.green {
+    background-color: $green;
+}
