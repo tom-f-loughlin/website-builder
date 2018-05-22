@@ -6,7 +6,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    width: calc(60% - 6px);
+    width: calc(100% - 6px);
     height: 100%;
     z-index: -1;
     filter: sepia(1);
@@ -26,14 +26,48 @@ main {
 }
 
 aside {
-    width: 40%;
-    &::before {
-        content: '';
-        background: url(../../../assets/imgs/snow.png);
-        height: 100%;
-        width: 39%;
-        opacity: 0.5;
+    width: 40%; // &::before {
+    //     content: '';
+    // background: url(../../../assets/imgs/snow.png);
+    //     height: 100%;
+    //     width: 39%;
+    //     opacity: 0.5;
+    //     position: absolute;
+    // }
+}
+.navigation {
+    z-index: 3;
+    display: inline-block;
+    position: absolute;
+    margin: 4px;
+}
+
+.menu-icon {
+    color: white;
+    display: inline-flex;
+    position: absolute;
+    margin: 4px;
+    z-index: 2;
+    &:hover {
+        color: green;
+        transition: color 200ms linear;
+        cursor: pointer;
+    }
+}
+
+.main-wrapper {
+    position: relative;
+    .top-corner,
+    .bottom-corner {
+        height: 30%;
+        width: 30%;
+        background-image: -webkit-linear-gradient(130deg, rgba(255, 255, 255, 0) 55%, $maroon 0%);
+    }
+    .bottom-corner {
         position: absolute;
+        bottom: 0;
+        right: 0;
+        background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0) 55%, $maroon 0%);
     }
 }
 
@@ -44,8 +78,21 @@ aside {
 
 .content {
     height: 100%;
-    background-color: $burgandy;
-    border-left: 8px double $light-color;
+    background-color: $maroon;
+    &::before {
+        content: '';
+        z-index: 1;
+        height: 100%;
+        width: 20%;
+        opacity: 1;
+        z-index: 0;
+        position: absolute;
+        background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+    }
 }
 
 section {
@@ -58,7 +105,7 @@ section {
     align-items: center;
     text-align: center;
     justify-content: space-around;
-    height: 80%;
+    height: 100%;
     width: 100%;
     overflow: hidden;
     color: $light-color;
@@ -70,38 +117,51 @@ section {
     .signature {
         line-height: 1.5em;
     }
+    .small-divider,
+    .small-divider-2 {
+        width: 60px;
+        margin: 10px;
+        border: 1px solid white;
+        align-self: center;
+    }
+    .small-divider-2 {
+        border-style: dashed;
+    }
     .title {
-        font-size: 5em;
-        font-family: 'SkinnyChick'; // border-top: 2px dotted $light-color;
+        font-size: 4em;
+        font-family: 'Sunflowers two'; // border-top: 2px dotted $light-color;
         border-right: none;
+        font-weight: lighter;
         border-left: none; // color: white;
         // animation: 1s ease-out 0s 1 fadeInLeftBig;
     }
     .signature {
-        font-size: 3em;
-        font-family: 'Antro Vectra';
+        font-size: 5em;
+        font-weight: 500;
+        font-family: 'Encina Script 2';
         text-align: center;
     }
     .clip {
         display: flex;
         flex-direction: column;
-        font-family: $title-font, cursive;
+        font-family: 'YoureInvited', cursive;
+        font-weight: 900;
         justify-content: center;
         text-align: center;
         font-size: 24px;
     }
 }
 
-.missle-toe {
-    height: calc(10% - 2px);
-    width: 100%;
-    background: url(../../../assets/imgs/mtoe.png) center center no-repeat;
-    background-size: cover;
-    &.top {
-        border-bottom: 2px solid $light-color;
-        transform: rotate(180deg);
-    }
-    &.bottom {
-        border-top: 2px solid $light-color;
-    }
-}
+// .missle-toe {
+//     height: calc(10% - 2px);
+//     width: 100%;
+//     background: url(../../../assets/imgs/mtoe.png) center center no-repeat;
+//     background-size: cover;
+//     &.top {
+//         border-bottom: 2px solid $light-color;
+//         transform: rotate(180deg);
+//     }
+//     &.bottom {
+//         border-top: 2px solid $light-color;
+//     }
+// }

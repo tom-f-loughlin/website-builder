@@ -60,6 +60,14 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+import 'rxjs/add/observable/timer';
+import 'rxjs/add/observable/interval';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/take';
+import 'rxjs/add/operator/share';
+import * as moment from 'moment';
+
+import fontawesome from '@fortawesome/fontawesome';
 
 /**
  * Date, currency, decimal and percent pipes.

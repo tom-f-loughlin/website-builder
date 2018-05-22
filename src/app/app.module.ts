@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { ROUTING } from './app.routing';
 import { SharedModule } from './shared/shared.module';
 import { PAGES } from './pages/pages.module';
+import { ClockService } from './pages/shared/clock.service';
 
 
 @NgModule({
@@ -25,7 +26,9 @@ import { PAGES } from './pages/pages.module';
       apiKey: 'AIzaSyAvTKPpna3GIV6K5GVQ6xX3YOy98M-5kmc'
     })
   ],
-  providers: [],
+  providers: [
+    ClockService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

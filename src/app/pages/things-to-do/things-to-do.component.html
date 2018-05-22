@@ -1,0 +1,20 @@
+<section>
+    <div class="back">
+        <button class="btn" routerLink='/'>Back</button>
+    </div>
+    <ng-container *ngFor="let item of data">
+        <article>
+            <h1>
+                {{item.id}}) {{ item.title }}
+            </h1>
+            <h2 *ngIf="!!item.subtitle">
+                {{item.subtitle}}
+            </h2>
+            <p>
+                {{item.data}}
+            </p>
+            <a [attr.href]="item.website" target="_blank">{{ item.title }} : Website </a>
+            <a [attr.href]="item.location" target="_blank"> Find it, google maps</a>
+        </article>
+    </ng-container>
+</section>

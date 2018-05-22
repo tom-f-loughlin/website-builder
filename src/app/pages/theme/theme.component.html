@@ -1,14 +1,15 @@
 <section>
-    <article class="left">
-        <div class="red">
-            Are theme is a Christmas one.
-            We both like the 1960's style so keep that in mind.
-            The two main colours are.. 
-        </div>
-    </article>
-    <article class="right">
-        <div class="green">
-            Green
-        </div>
-    </article>
+    <div class="back">
+        <button class="btn" routerLink='/'>Back</button>
+    </div>
+    <h1>
+        {{ data.description }}
+    </h1>
+    <ng-container *ngFor="let item of data.colors; let first = first; let last = last;">
+        <article [class.left]="first" [class.right]="last">
+            <div class="item.id">
+                {{item.name}}
+            </div>
+        </article>
+    </ng-container>
 </section>

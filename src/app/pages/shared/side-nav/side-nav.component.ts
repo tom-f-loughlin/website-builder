@@ -4,43 +4,63 @@ interface NavItems {
     nameTag: string;
     link: string;
     active: boolean;
+    icon?: string;
 }
 
 const navObjs: NavItems[] = [
     {
         nameTag: 'Home',
         link: '',
-        active: true
+        active: true,
+        icon: 'fas fa-home fa-2x'
     },
     {
         nameTag: 'Our Story',
-        link: '',
-        active: false
+        link: 'our-story',
+        active: false,
+        icon: 'fas fa-book fa-2x'
     },
     {
         nameTag: 'Things To Do',
-        link: '',
-        active: false
+        link: 'things-to-do',
+        active: false,
+        icon: 'fab fa-fort-awesome fa-2x'
     },
     {
         nameTag: 'Location',
         link: 'location',
-        active: false
+        active: false,
+        icon: 'fas fa-map fa-2x'
     },
     {
         nameTag: 'Travelling',
         link: 'travelling',
-        active: false
+        active: false,
+        icon: 'fas fa-map-signs fa-2x'
     },
     {
         nameTag: 'Theme',
         link: 'theme',
-        active: false
+        active: false,
+        icon: 'fas fa-palette fa-2x'
     },
     {
         nameTag: 'RSVP',
-        link: '',
-        active: false
+        link: 'rsvp',
+        active: false,
+        icon: 'fas fa-envelope fa-2x'
+    },
+    {
+        nameTag: 'Schedule',
+        link: 'schedule',
+        active: false,
+        icon: 'fas fa-clipboard-list fa-2x'
+    },
+    {
+        nameTag: 'Accomandation',
+        link: 'accomandation',
+        active: false,
+        icon: 'fas fa-bed fa-2x'
     }
 ];
 

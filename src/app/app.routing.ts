@@ -9,6 +9,7 @@ function findPage(componentName: string) {
     const foundPage = PAGES.find(v => v.name === componentName);
     if (!foundPage) {
         // window.location.href = '';
+        return AppComponent;
     }
     return foundPage;
 }
@@ -33,6 +34,22 @@ export const AppRoutes: Routes = [
     {
         path: 'travelling',
         component: findPage('TravellingComponent')
+    },
+    {
+        path: 'rsvp',
+        component: findPage('RsvpComponent')
+    },
+    {
+        path: 'schedule',
+        component: findPage('ScheduleComponent')
+    },
+    {
+        path: 'things-to-do',
+        component: findPage('ThingsToDoComponent')
+    },
+    {
+        path: 'our-story',
+        component: findPage('OurStoryComponent')
     },
     {
         path: '**',

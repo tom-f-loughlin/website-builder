@@ -2,6 +2,7 @@
 
 @import 'variables';
 @import 'fontface';
+
 html,
 body {
     height: 100%;
@@ -10,7 +11,7 @@ body {
 }
 
 body {
-    font-family: $para-font, Verdana;
+    font-family: $para-font, 'Trebuchet MS', 'Verdana';
     background-color: $bg-color;
 }
 .btn {
@@ -28,7 +29,7 @@ body {
     }
 }
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */

@@ -1,7 +1,7 @@
 <ul>
     <li *ngFor="let nav of navigationItems">
-        <a routerLink='/{{nav.link}}'>
-            {{ nav.nameTag }}
+        <a class="linkable" routerLink='/{{nav.link}}'>
+            <i [ngClass]="nav.icon"></i> {{ nav.nameTag }}
         </a>
     </li>
 </ul>
