@@ -2,7 +2,6 @@
 
 @import 'variables';
 @import 'fontface';
-
 html,
 body {
     height: 100%;
@@ -14,6 +13,7 @@ body {
     font-family: $para-font, 'Trebuchet MS', 'Verdana';
     background-color: $bg-color;
 }
+
 .btn {
     border: 1px groove whitesmoke;
     padding: 10px;

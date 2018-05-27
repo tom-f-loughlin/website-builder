@@ -1,7 +1,27 @@
 @import 'variables';
+.main-app-wrapper {
+    display: flex;
+    height: 100%;
+}
 
+.navigation {
+    width: 80px;
+    background-color: #803637;
+    // box-shadow: inset -1px 0px 1px 0px rgba(255,255,255,1);
+    // border-right: 1px solid white;
+}
 
-// TODO make all styles into styling folder. 
+.main {
+    width: 100%;
+}
+
+@media (max-width: 690px) {
+    .main-app-wrapper {
+        flex-direction: column;
+    }
+}
+
+// TODO make all styles into styling folder.
 // Animations classes in one file
 @keyframes fadeInLeftBig {
     from {
