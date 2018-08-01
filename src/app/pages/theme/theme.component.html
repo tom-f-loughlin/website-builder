@@ -1,15 +1,15 @@
-<section>
-    <div class="back">
-        <button class="btn" routerLink='/'>Back</button>
-    </div>
-    <h1>
-        {{ data.description }}
-    </h1>
+<nav class="back">
+    <button class="btn" routerLink='/'>Back</button>
+</nav>
+<main>
     <ng-container *ngFor="let item of data.colors; let first = first; let last = last;">
-        <article [class.left]="first" [class.right]="last">
-            <div class="item.id">
-                {{item.name}}
-            </div>
-        </article>
+        <div class="desc" *ngIf="first">
+            <h1>{{ data.title }}</h1>
+            <p>{{ data.description }}</p>
+        </div>
+        <section class="item.id" [class.left]="first" [class.right]="last">
+            <h1>{{item.name}}</h1>
+            <div class="circle"></div>
+        </section>
     </ng-container>
-</section>
+</main>

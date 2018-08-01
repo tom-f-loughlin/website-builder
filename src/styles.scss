@@ -15,15 +15,17 @@ body {
 }
 
 .btn {
-    border: 1px groove whitesmoke;
+    border: 1px solid whitesmoke;
     padding: 10px;
     min-width: 80px;
     color: white;
     background: transparent;
     cursor: pointer;
     outline: none;
-    font-family: 'Dominique';
     font-size: 16px;
+    margin: 10px;
+    border-radius: 4px;
+    // font-family: 'YoureInvited
     &:hover {
         background: rgba(0, 0, 0, 0.3);
     }

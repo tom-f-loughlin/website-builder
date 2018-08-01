@@ -6,8 +6,7 @@
 
 .navigation {
     width: 80px;
-    background-color: #803637;
-    // box-shadow: inset -1px 0px 1px 0px rgba(255,255,255,1);
+    background-color: #803637; // box-shadow: inset -1px 0px 1px 0px rgba(255,255,255,1);
     // border-right: 1px solid white;
 }
 
@@ -91,6 +90,20 @@
         opacity: 1;
         transform: translate3d(0, 0, 0);
     }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.slideInLeft {
+    animation-name: slideInLeft;
 }
 
 .fadeInLeftBig {

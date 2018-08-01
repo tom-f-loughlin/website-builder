@@ -1,49 +1,46 @@
-<section>
-    <article class="content">
-        <div class="back">
-            <button class="btn" routerLink='/'>Back</button>
-        </div>
+<section class="content">
+    <nav class="header">
+        <button class="btn" routerLink='/'>Back</button>
         <div>
-            <dl>
-                <dt>17th May 2014</dt>
-                <dd>
-                    We first meet in Dublin Ireland when she asked for directions beach(Sandymount Strand) on the corner of Slattery's Pub in
-                    Grand Canal
-                </dd>
-                <dt>Late September 2014</dt>
-                <dd>
-                    <small>after emailing for the summer</small>
-                    We went on are First date in London England. And when I feel in love with her. We went to see Michael Jackson the musical
-                    (front row center)
-                </dd>
+            <h1>Our Story</h1>
+            <div class="divider"></div>
+        </div>
+    </nav>
+    <article class="line-story">
+        <!-- Add to header Component -->
+        <dl class="line-graph">
+            <!-- TODO: Componetise -->
+            <div class="odd">
+                <div class="time-wrap" *ngFor="let item of storyOdd; let last = last; let idx = index">
+                    <div class="time-content" [class.end]="last">
+                        <dt>{{ item.title }}</dt>
+                        <dd>{{ item.text }}</dd>
+                    </div>
+                    <div class="time-circle">
+                        <div class="circle" [ngClass]="getImgClass(idx, true)"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="line-divider"></div>
+            <div class="even">
+                <div class="time-wrap" *ngFor="let item of storyEven; let last = last;  let idx = index">
+                    <div class="time-content" [class.end]="last">
+                        <dt>{{ item.title }}</dt>
+                        <dd>{{ item.text }}</dd>
+                    </div>
+                    <div class="time-circle">
+                        <div class="circle" [ngClass]="getImgClass(idx, false)"></div>
+                    </div>
+                </div>
 
-                <dt>
-                    26th Of November 2014
-                </dt>
-                <dd>
-                    When we started going out after I asked her out on my birthday (tactical) And began travelling to the UK every month.
-                </dd>
-                <dt>
-                    Early March 2015
-                </dt>
-                <dd>
-                    After getting a new job I moved to England, So I could be closer to Irena. A few months later we moved into together in Southampton.
-                </dd>
-                <dt>
-                    New Year of 2017
-                </dt>
-                <dd>
-                    We packed up are stuff from England and drove all the way to Czech, to start our new life…
-                </dd>
-            </dl>
-        </div>
-        <div>
-            Inbetween this time we travelled the East coast of America and travelled to Kazakstan for our friends wedding and then onto
-            thailand
-        </div>
+            </div>
+        </dl>
     </article>
-    <!-- <article>
+    <div class="bottom-text">
+        {{ storyTime.bottomText }}
+    </div>
+</section>
+<!-- <article>
         <div>collage picture of us</div>
         <div>normal</div>
     </article> -->
-</section>

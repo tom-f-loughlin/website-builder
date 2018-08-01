@@ -6,13 +6,14 @@ interface ThemeColor {
 }
 
 interface ThemeData {
+    title: string;
     description: string;
     colors: ThemeColor[];
 }
 
-const THEME = {
-    description: `Our theme is a Christmas one.
-     With a like the 1960's style tp be kept that in mind. The two main colours are..`,
+const THEME: ThemeData = {
+    title: 'Our theme is a Christmas one.',
+    description: `With a like the 1960's style tp be kept that in mind. The two main colours are..`,
     colors: [
         {
             id: 'forest-green',

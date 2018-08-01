@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { chunk } from 'lodash';
 
 interface IToDo {
     id: number;
@@ -59,7 +60,7 @@ const TO_DO_DATA = [
     {
         id: 6,
         title: 'The National Moravian',
-        subtitle: 'Silesian Theatre',
+        subtitle: 'Antonín dvorak',
         data: `Lovely old theatre you may find something that might interest you while your in the area`,
         website: 'http://www.ndm.cz/en/programme/another-month/12-2018/#anch'
     },
@@ -83,5 +84,35 @@ const TO_DO_DATA = [
 export class ThingsToDoComponent {
 
     data: IToDo[] = TO_DO_DATA;
+    rowedData: IToDo[][] = [];
+
+
+    constructor() {
+        this.rowedData = chunk(TO_DO_DATA, 3);
+    };
+
+    getImgClass(idx: number, odd: boolean) {
+        if (odd) {
+            switch (idx) {
+                case 0:
+                    return 'first';
+                case 1:
+                    return 'together';
+                case 2:
+                    return 'eastleigh';
+                case 3:
+                    return 'ring';
+            }
+        } else {
+            switch (idx) {
+                case 0:
+                    return 'michael';
+                case 1:
+                    return 'paris';
+                case 2:
+                    return 'map';
+            }
+        }
+    };
 
 }

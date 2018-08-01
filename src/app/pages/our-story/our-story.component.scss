@@ -1,0 +1,157 @@
+@import 'variables';
+.content {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($primary-grn, 0.6);
+    flex-direction: column;
+    color: white;
+    line-height: 1.2rem;
+    position: relative;
+    h1 {
+        text-align: center;
+        font-size: 3em;
+        font-family: 'YoureInvited';
+        line-height: 100%;
+    }
+    .divider {
+        background-image: url(/src/assets/imgs/curly-divider.png);
+        height: 60px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        margin-top: 10px;
+        width: 100%;
+        position: absolute;
+        opacity: 0.9;
+        top: 32px;
+    }
+    .line-story {
+        margin: auto 20px;
+        height: 100%;
+        display: inline-flex;
+        flex-direction: column;
+        position: relative;
+        .line-graph {
+            position: relative;
+            display: flex;
+            align-content: center;
+            flex-direction: row;
+            height: 100%;
+            justify-content: center;
+        }
+        .odd,
+        .even {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin: 3em 0 1em 0;
+            width: 49%;
+            .time-wrap {
+                display: inline-flex;
+                .time-content {
+                    width: 70%;
+                }
+                .time-circle {
+                    width: 30%;
+                    margin: 0 1em;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+        .odd {
+            justify-content: space-between;
+            text-align: right;
+            .time-wrap {
+                flex-direction: row-reverse;
+            }
+            .dublin {
+                background: url(../../../assets/imgs/dublin.png);
+                background-position: center;
+                background-size: cover;
+            }
+            .together {
+                background: url(../../../assets/imgs/together.png);
+                background-position: center;
+                background-size: cover;
+            }
+            .eastleigh {
+                background: url(../../../assets/imgs/eastleigh.png);
+                background-position: center;
+                background-size: cover;
+            }
+            .ring {
+                background: url(../../../assets/imgs/ring.png);
+                background-position: center;
+                background-size: cover;
+            }
+        }
+        .even {
+            justify-content: space-around;
+            .time-wrap {
+                flex-direction: row;
+            }
+            .michael {
+                background: url(../../../assets/imgs/michael.png);
+                background-position: center;
+                background-size: cover;
+            }
+            .paris {
+                background: url(../../../assets/imgs/paris.jpg);
+                background-position: center;
+                background-size: cover;
+            }
+            .map {
+                background: url(../../../assets/imgs/map.png);
+                background-position: center;
+                background-size: cover;
+            }
+        }
+    }
+    dt {
+        font-size: 1.5rem;
+        font-weight: bolder; // inherit
+        margin: 10px 0;
+        padding: 0 10px;
+        line-height: 100%;
+        font-family: 'YoureInvited'; // border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        text-decoration: underline;
+        text-decoration-color: rgba(255, 255, 255, 0.5);
+    }
+    dd {
+        font-size: 1.1rem;
+        font-weight: bolder;
+        margin: 10px 0;
+        padding: 0 10px;
+        line-height: 1.5rem;
+    }
+    .circle {
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        border: 1px solid white;
+    }
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    height: 60px;
+    margin-top: 10px;
+    .btn {
+        position: absolute;
+    }
+}
+
+.line-divider {
+    height: calc(100% - 4em);
+    border-right: 2px solid white; // make mixin so that can be used later
+    margin: 1em 0;
+}
+
+.bottom-text {
+    margin-bottom: 10px;
+    text-align: center;
+}
