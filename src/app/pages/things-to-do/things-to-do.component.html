@@ -1,22 +1,24 @@
 <section>
     <nav class="header">
-        <button class="btn" routerLink='/'>Back</button>
-
         <h1>Things to do</h1>
     </nav>
     <main class="wrapper">
-        <article *ngFor="let item of data; let odd = odd, let even = even; let idx = index;">
-            <!-- > -->
+        <button class="slide-nav left">
+            <i class="fas fa-arrow-left fa-2x"></i>
+        </button>
+        <article *ngFor="let item of data; let idx = index;">
             <div class="thing-square">
-                <div class="image" [ngClass]="getImgClass(idx, !odd)"></div>
-                <div class="wedge"></div>
+                <div class="image" [ngClass]="getImgClass(idx)"></div>
+                <div class="wedge">
+                    <span>{{item.id}}.</span>
+                </div>
             </div>
 
             <div class="thing-details">
+                <h1 class="title">
+                    {{ item.title }}
+                </h1>
                 <div class="content">
-                    <h1>
-                        {{item.id}}. {{ item.title }}
-                    </h1>
                     <h2 *ngIf="!!item.subtitle">
                         {{item.subtitle}}
                     </h2>
@@ -24,11 +26,14 @@
                         {{item.data}}
                     </p>
                 </div>
-                <div class="thing-actions">
-                    <button [attr.href]="item.website" target="_blank"> Website </button>
-                    <button [attr.href]="item.location" target="_blank">Google Maps</button>
-                </div>
+            </div>
+            <div class="thing-actions">
+                <button (click)="navigateTab(item.website)"> Website </button>
+                <button *ngIf="item.location" (click)="navigateTab(item.location)">Google Maps</button>
             </div>
         </article>
+        <button class="slide-nav right">
+            <i class="fas fa-arrow-right fa-2x"></i>
+        </button>
     </main>
 </section>

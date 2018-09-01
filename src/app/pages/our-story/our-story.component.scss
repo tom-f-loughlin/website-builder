@@ -1,9 +1,9 @@
 @import 'variables';
 .content {
     display: flex;
-    height: 100%;
+    height: inherit;
     width: 100%;
-    background-color: rgba($primary-grn, 0.6);
+    background-color: $maroon;
     flex-direction: column;
     color: white;
     line-height: 1.2rem;

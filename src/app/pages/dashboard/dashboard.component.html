@@ -1,0 +1,14 @@
+<section>
+    <article>
+        <h1 class="first">Welcome to..</h1>
+        <h1 class="second"> Irena &amp; Tom's wedding website.</h1>
+        <input class="third"
+            #userName
+            placeholder="Enter surname.."
+            (keydown.enter)="correctName()"
+            [(ngModel)]="name">
+    </article>
+    <button *ngIf="showEnter"
+        (click)="correctName()"
+        class="enter-site">Enter</button>
+</section>

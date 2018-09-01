@@ -1,16 +1,14 @@
+@import 'variables';
 section {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    width: 100%;
+    height: inherit;
+    background-color: rgba($green, 0.3);
     .header {
-        display: inline-flex;
+        display: flex;
         height: 80px;
-        margin-bottom: 10px;
+        margin: auto;
         align-items: center;
-        .btn {
-            position: absolute;
-        }
         h1 {
             margin: 0 auto;
             text-align: center;
@@ -21,113 +19,141 @@ section {
         }
     }
     .wrapper {
+        display: inline-flex;
         height: 100%;
-        width: 100%;
-        overflow: auto;
-        position: relative;
-        background-color: rgba(234, 123, 123, 0.6);
+        width: calc(100% - 120px);
+        margin: 0 60px;
+        overflow: hidden;
+        align-items: center;
+        .slide-nav {
+            position: absolute;
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            outline: none;
+            z-index: 5;
+            background-color: white;
+            color: #8fbc8f;
+            border: 1px solid #8fbc8f;
+            cursor: pointer;
+            &:hover {
+                color: white;
+                background: #8fbc8f;
+                border: 1px solid white;
+            }
+            &:active {
+                border: 1px inset white;
+            }
+            &.left {
+                left: 0;
+            }
+            &.right {
+                right: 0;
+            }
+        }
         article {
-            width: calc(33.33% - 10px);
-            height: 450px;
-            margin: 25px 5px;
+            min-width: calc(33.33% - 20px);
+            margin: 0 10px;
+            height: 80%;
             display: inline-flex;
             flex-direction: column;
-            background-color: white;
+            .image {
+                height: 100%;
+                &.vitkovice {
+                    background: url(../../../assets/imgs/Vitkovice.jpg);
+                    background-position: center;
+                    background-size: cover;
+                }
+                &.zoo {
+                    background: url(../../../assets/imgs/zoo-ostrava.jpg);
+                    background-position: center;
+                    background-size: cover;
+                }
+                &.castle {
+                    background: url(../../../assets/imgs/silesian-ostrava-castle.jpg);
+                    background-position: center;
+                    background-size: cover;
+                }
+                &.ema {
+                    background: url(../../../assets/imgs/ema.jpg);
+                }
+                &.party {
+                    background: url(../../../assets/imgs/party.jpg);
+                    background-position: center;
+                    background-size: cover;
+                }
+                &.theatre {
+                    background: url(../../../assets/imgs/theatre.jpg);
+                    background-position: center;
+                    background-size: cover;
+                }
+                &.mini {
+                    background: url(../../../assets/imgs/mini.jpg);
+                    background-position: center;
+                    background-size: cover;
+                }
+            }
         }
         .thing-details,
         .thing-square {
             height: 50%;
-            background-color: teal;
-        }
-        .thing-details {
-            padding: 1em 1em 0 1em;
-            display: inline-flex;
-            flex-direction: column;
-            justify-content: space-between; // background: burlywood;
-        }
-        .thing-text {
-            margin-top: 2em;
         }
         .thing-square {
-            width: 100%;
-            background-color: mediumaquamarine;
+            position: relative;
+            .wedge {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-image: -webkit-linear-gradient(-120deg, rgba(255, 255, 255, 0) 75%, $tert-grn 0%); // opacity: 0.5;
+                span {
+                    position: absolute;
+                    bottom: 1em;
+                    left: 20px;
+                    font-size: 2em;
+                    color: white;
+                }
+            }
+        }
+        .thing-details {
+            padding: 0 1em;
+            display: inline-flex;
+            flex-direction: column;
+            min-height: auto;
+            background: $tert-grn;
+            position: relative;
+        }
+        .title {
+            font-size: 1.5em;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
         }
         .content {
-            height: 50%;
+            margin-bottom: 14px;
+            overflow: auto;
+            height: 100%;
         }
-        .thing-actions {
-            height: 60px;
-            button {
-                height: 100%;
-                width: 49%;
-                background: transparent;
+    }
+    .thing-actions {
+        height: 60px;
+        width: 100%;
+        display: inline-flex;
+        button {
+            height: 100%;
+            width: 50%;
+            color: #8fbc8f;
+            background: white;
+            border: 1px solid #8fbc8f;
+            &:hover {
+                color: white;
+                background: #8fbc8f;
+                border: 1px solid white;
             }
-        } // article {
-        //     display: inline-block;
-        //     background: white;
-        //     max-width: 33%;
-        //     margin: 0 10px;
-        //     // width: 33%;
-        // }
-        // .ti {
-        //     background: teal;
-        // }
-        // .thing-square {
-        //     display: none;
-        // }
-        // article {
-        //     height: 500px;
-        //     display: inline-block;
-        //     width: calc(33% - 60px);
-        //     margin: 0 10px;
-        //     position: relative;
-        //     background-color: white; // align-items: flex-end;
-        //     // .thing-square {
-        //     //     width: 40%;
-        //     //     height: 100%;
-        //     //     position: relative;
-        //     //     background: green;
-        //     // }
-        //     &.first {
-        //         background: url(../../../assets/imgs/Vitkovice.jpg)
-        //     }
-        //     .thing-details {
-        //         width: 60%;
-        //         margin: 10px;
-        //         display: flex;
-        //         flex-direction: column;
-        //         height: 100%;
-        //         justify-content: space-evenly;
-        //         h1 {
-        //             font-size: 2.5em;
-        //         }
-        //         h2 {
-        //             font-size: 1.8em;
-        //         }
-        //         h1,
-        //         p {
-        //             line-height: 100%;
-        //         }
-        //     }
-        // .wedge {
-        //     height: 100%;
-        //     width: 50%;
-        //     position: absolute;
-        //     bottom: 0;
-        // }
-        // &.odd {
-        //     right: 0;
-        //     &:after {
-        //         background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0) 55%, #620607 90%);
-        //     }
-        // }
-        // &.even {
-        //     flex-direction: row-reverse;
-        //     left: 0;
-        //     &:after:background-image {
-        //         // -webkit-linear-gradient(225deg, rgba(255, 255, 255, 0) 55%, #620607 90%);
-        //     }
-        // }
-        // }
+            &:active {
+                border: 1px inset white;
+            }
+        }
     }
 }

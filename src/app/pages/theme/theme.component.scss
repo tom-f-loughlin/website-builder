@@ -1,6 +1,6 @@
 @import 'variables';
-main {
-    height: 100%;
+.wrapper {
+    height: inherit;
     display: flex;
     color: white;
     position: relative;
@@ -37,7 +37,6 @@ nav {
 section {
     width: 50%; // font-family: 'Tahu!';
     font-family: 'YoureInvited';
-    height: 100%;
     display: flex;
     position: relative;
     flex-direction: column;

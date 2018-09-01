@@ -1,7 +1,5 @@
-<nav class="back">
-    <button class="btn" routerLink='/'>Back</button>
-</nav>
-<main>
+
+<main class="wrapper">
     <ng-container *ngFor="let item of data.colors; let first = first; let last = last;">
         <div class="desc" *ngIf="first">
             <h1>{{ data.title }}</h1>

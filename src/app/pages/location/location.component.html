@@ -1,43 +1,116 @@
 <section class="location-wrap">
     <article class="content">
-        <div class="back">
-            <button class="btn" routerLink='/'>Back</button>
-        </div>
-        <div class="location-information">
+        <div class="top">
             <h1>Location</h1>
-            <div class="divider"></div>
-            <p>
-                The wedding will be in the
-                <span>East Czech Republic</span>.
-            </p>
-            <p>
-                The closest biggest town is called
-                <span>Ostrava</span>, which is 17minutes by car(16.5km) to the location.
-            </p>
-            <p>
-                We will be Celebrating the Wedding in
-                <span>Hotel Pod Zeleným</span>
-                and the ceremony will be in the neighbouring church
-                <span>Kostel Narození Panny Marie</span>.
-            </p>
-            <a>
-                click here for a schedule of times
-            </a>
+            <div>
+                <h4>
+                    The wedding will be held in <span> Czech Republic</span>.
+                    <small> Near to Irca's village (H'at)</small>
+                </h4>
+                <p>
+                    The venue is <span>Hotel Pod Zeleným</span> were will be celebrating the wedding. As for the ceremony
+                    we it will be taking place by the neighbouring church which is across the square from the venue
+                    <span>Kostel Narození Panny Marie</span>. Both of the wedding locations are approx. ~20minutes from Ostrava
+                    which is the closest biggest city (3rd biggest in Czech). For interesting things to do in Ostrava scroll
+                    or <a>click</a>
+                </p>
+            </div>
         </div>
+        <div class="bottom">
+            <h1>How to get to the Wedding</h1>
+            <div>
+                First things first, you want to get to Czech Republic. For a few of you, you may have the opportunity to fly direct to Ostrava(fastest)
+                others Prague, however you can also fly to Katowice.
+            </div>
+            <div>
+                <input type="radio" name="arriving" value="prague" [(ngModel)]="userArriveType"> Prague Airport<br>
+                <input type="radio" name="arriving" value="ostrava" [(ngModel)]="userArriveType"> Ostrava Airport<br>
+                <input type="radio" name="arriving" value="katowice" [(ngModel)]="userArriveType"> Katowice<br>
+            </div>
 
-        <!-- <h2>
-            Celebration: Hotel Pod Zeleným
-        </h2> -->
-        <!-- <p>
-            nám. Svobody 37 Starý Bohumín 735 81 Česká republika
-        </p>
-        <p>
-            If you would like help finding it you a way to the location 
-            you can check out these sites
-        </p> -->
+            <div [ngSwitch]="userArriveType">
+                <div *ngSwitchCase="'prague'">
+                    <h3> Flying to Václav Havel Airport Prague.</h3>
+
+                    <i>Once at the Airport you need to get the to Center.</i>
+                    <h5>
+                        Getting to the Center:
+                    </h5>
+                    <ol>
+                        <li>
+                            Buy a ticket for the AE airport bus asking to get off at Hlavní nádraží.
+                        </li>
+                        <li>
+                            At Hlavní nádraží, board your Train to Moravia (East Czech). There are two options: (we also suggest travelling with Leo
+                            express or Cseke Drahy)
+                            <ul>
+                                <li>Travel to Ostrava (19.0km from Venue)
+                                    <a href="https://goo.gl/maps/iU8FJjDv6982">
+                                        Google maps from Ostrava to Hotel
+                                    </a>
+                                </li>
+                                <li>Travel to Bohumnia (3.3km from Venue)
+                                    <a href="https://goo.gl/maps/yd27FUKHhnq">
+                                        Google maps from Bohumnia to Hotel
+                                    </a>
+                                </li>
+                            </ul>
+                    </ol>
+                </div>
+                <div *ngSwitchCase="'ostrava'">
+
+                    <h3> Flying to Letiště Leoše Janáčka Airport Ostrava.</h3>
+                    <i>Once at the Airport you need to get the to Venue.</i>
+                    <h5>
+                        Getting to the Venue:
+                    </h5>
+                    <a href="https://goo.gl/maps/qn59B5LoZxG2">
+                        Google maps from Bohumnia to Hotel
+                    </a>
+
+                </div>
+                <div *ngSwitchCase="'katowice'">
+                    <h3> Flying to Katowice International Airport Poland.</h3>
+                    <i>Once at the Airport you need to get the to Venue.</i>
+                    <h5>
+                        Getting to the Venue:
+                    </h5>
+                    <ol>
+                        <li>
+                            Buy a ticket with Leo Express from the airport to Bohumín.
+                        </li>
+                        <li>Travel to Bohumnia</li>
+                        <li>
+                            <a href="https://goo.gl/maps/qn59B5LoZxG2">
+                                Google maps from Bohumnia to Hotel
+                            </a>
+                    </ol>
+                </div>
+            </div>
+            <p>
+                Get out of the {{ userArriveType === 'ostrava' ? 'airport': 'train station' }} jump in a taxi (easiest way) and ask address
+                below. The address you need to ask for : Hotel Pod Zeleným - nám. Svobody 37 Starý Bohumín 735 81 Česká republika
+                <small> However if you have any problems contact us.</small>
+            </p>
+            <b>Please note Uber doesn't work however this app might http://www.liftago.cz/ though we suggest just calling
+                or hailing one</b>
+
+            <div>
+                Super Links:
+
+                <a href="https://www.cd.cz/en/default.htm"> Buy Cseke Drahy train tickets </a>
+                <a href="https://www.leoexpress.com/en"> Buy Leo Express train tickets </a>
+
+                Or if you are interested in another way try looking at
+                <a href="https://www.rome2rio.com/">Rome2Rio (best travel site)</a>
+                <b> Trains are not yet avaliable to book however when they are we will email you.</b>
+            </div>
+        </div>
     </article>
     <aside class="side">
-        <div class="hotel"></div>
+        <div class="hotel">
+
+        </div>
         <agm-map class="gmap" [latitude]="49.9195721" [longitude]="18.3285126" [zoom]="15">
             <agm-marker [latitude]="49.9195721" [longitude]="18.3285126"></agm-marker>
         </agm-map>

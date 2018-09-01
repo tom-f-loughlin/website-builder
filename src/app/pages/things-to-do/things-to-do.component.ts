@@ -7,10 +7,10 @@ interface IToDo {
     subtitle?: string;
     data: string;
     website?: string;
-    location: string;
+    location?: string;
 }
 
-const TO_DO_DATA = [
+const TO_DO_DATA: IToDo[] = [
     {
         id: 1,
         title: 'Dolni Vitkovice',
@@ -22,7 +22,7 @@ const TO_DO_DATA = [
         A Climbing wall.. And a tour of the Mines.
         But if you interested have a look at the website it's definitly worth a see.`,
         website: 'http://www.dolnivitkovice.cz/',
-        location: 'https://goo.gl/maps/CpAH6H2EJqH2'
+        location: 'https://goo.gl/maps/CpAH6H2EJqH2',
     },
     {
         id: 2,
@@ -62,7 +62,7 @@ const TO_DO_DATA = [
         title: 'The National Moravian',
         subtitle: 'Antonín dvorak',
         data: `Lovely old theatre you may find something that might interest you while your in the area`,
-        website: 'http://www.ndm.cz/en/programme/another-month/12-2018/#anch'
+        website: 'http://www.ndm.cz/en/programme/another-month/12-2018/#anch',
     },
     {
         id: 7,
@@ -73,7 +73,7 @@ const TO_DO_DATA = [
         website: 'http://miniuni.cerna-louka.cz/',
         location: 'https://goo.gl/maps/EeaFmQdVFMs'
     },
-] as IToDo[];
+];
 
 
 @Component({
@@ -91,28 +91,35 @@ export class ThingsToDoComponent {
         this.rowedData = chunk(TO_DO_DATA, 3);
     };
 
-    getImgClass(idx: number, odd: boolean) {
-        if (odd) {
-            switch (idx) {
-                case 0:
-                    return 'first';
-                case 1:
-                    return 'together';
-                case 2:
-                    return 'eastleigh';
-                case 3:
-                    return 'ring';
-            }
-        } else {
-            switch (idx) {
-                case 0:
-                    return 'michael';
-                case 1:
-                    return 'paris';
-                case 2:
-                    return 'map';
-            }
+    getImgClass(idx: number): string {
+
+        switch (idx) {
+            case 0:
+                return 'vitkovice';
+            case 1:
+                return 'zoo';
+            case 2:
+                return 'castle';
+            case 3:
+                return 'ema';
+            case 4:
+                return 'party';
+            case 5:
+                return 'theatre';
+            case 6:
+                return 'mini';
         }
+
     };
+
+    navigateTab(link: string) {
+        let url = '';
+        if (!/^http[s]?:\/\//.test(link)) {
+            url += 'http://';
+        }
+
+        url += link;
+        window.open(url, '_blank');
+    }
 
 }

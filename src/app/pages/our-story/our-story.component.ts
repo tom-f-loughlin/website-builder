@@ -89,6 +89,6 @@ export class OurStoryComponent {
                     return 'map';
             }
         }
-    }
+    };
 };
 

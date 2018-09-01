@@ -7,7 +7,7 @@ import { AgmCoreModule } from '@agm/core';
 import { AppComponent } from './app.component';
 import { ROUTING } from './app.routing';
 import { SharedModule } from './shared/shared.module';
-import { PAGES } from './pages/pages.module';
+import { PAGES } from './pages';
 import { ClockService } from './pages/shared/clock.service';
 
 
