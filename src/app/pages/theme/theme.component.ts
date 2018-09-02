@@ -13,7 +13,7 @@ interface ThemeData {
 
 const THEME: ThemeData = {
     title: 'Our theme is a Christmas one.',
-    description: `With a like the 1960's style tp be kept that in mind. The two main colours are..`,
+    description: `With a Georgian Era style to be kept that in mind. The two main colours are..`,
     colors: [
         {
             id: 'forest-green',

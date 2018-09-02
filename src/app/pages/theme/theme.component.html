@@ -1,5 +1,5 @@
 
-<main class="wrapper">
+<main class="wrapper" *ngIf="!!data && !!data.colors">
     <ng-container *ngFor="let item of data.colors; let first = first; let last = last;">
         <div class="desc" *ngIf="first">
             <h1>{{ data.title }}</h1>

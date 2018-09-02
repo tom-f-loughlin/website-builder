@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewInit, HostListener } from '@angular/core';
 import { chunk } from 'lodash';
 
 interface IToDo {
@@ -81,15 +81,35 @@ const TO_DO_DATA: IToDo[] = [
     templateUrl: './things-to-do.component.html',
     styleUrls: ['./things-to-do.component.scss']
 })
-export class ThingsToDoComponent {
+export class ThingsToDoComponent implements AfterViewInit {
+    @ViewChild('carouselInner') carouselInner: ElementRef;
 
+    @HostListener('click') onMouseOut() {
+        if (this.interval) {
+            clearInterval(this.interval);
+            setTimeout(() => {
+                this.timer = 10000;
+                this.setSlider();
+            }, 100);
+        }
+    }
     data: IToDo[] = TO_DO_DATA;
     rowedData: IToDo[][] = [];
-
+    position = 0;
+    private maxValue: number;
+    private singleInstance: number;
+    private timer = 4000;
+    private interval;
 
     constructor() {
         this.rowedData = chunk(TO_DO_DATA, 3);
     };
+
+    ngAfterViewInit() {
+        this.singleInstance = Math.ceil((this.carouselInner.nativeElement.getBoundingClientRect().width * .33333));
+        this.maxValue = this.singleInstance * (this.data.length - 1);
+        this.setSlider();
+    }
 
     getImgClass(idx: number): string {
 
@@ -111,6 +131,11 @@ export class ThingsToDoComponent {
         }
 
     };
+    private setSlider() {
+        this.interval = setInterval(() => {
+            this.rightAction();
+        }, this.timer);
+    }
 
     navigateTab(link: string) {
         let url = '';
@@ -122,4 +147,19 @@ export class ThingsToDoComponent {
         window.open(url, '_blank');
     }
 
+    leftAction() {
+        if (Math.abs(this.position) < 0) {
+            this.position = -(this.maxValue - this.singleInstance * 2);
+        } else {
+            this.position = (this.singleInstance + this.position);
+        }
+    }
+
+    rightAction() {
+        if (Math.abs(this.position) > (this.maxValue - this.singleInstance * 3)) {
+            this.position = 0;
+        } else {
+            this.position = -(this.singleInstance - this.position);
+        }
+    }
 }

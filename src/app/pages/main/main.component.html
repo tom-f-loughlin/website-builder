@@ -1,34 +1,34 @@
+<nav class="header-nav">
+    <img src="../../../assets/imgs/logo.png" width="54" height="54" (click)="scroll('home')">
+    <div class="navigation">
+
+        <button class="border" (click)="scroll('story')">
+            Our Story
+        </button>
+        <button class="border" (click)="scroll('theme')">
+            Theme
+        </button>
+        <button class="border" (click)="scroll('location')">
+            Location & Information
+        </button>
+        <button (click)="scroll('todo')">
+            Things to do
+        </button>
+    </div>
+</nav>
 <main class="page-wrapper">
-    <section class="greetings" [style.height.px]="innerHeight">
+    <section id="home" class="greetings" [style.height.px]="innerHeight">
         <article class="g-container">
             <header class="digit_new_rotated">
                 <h3>
-                    29
-                    <span> &#9679; </span>
-                    12
-                    <span> &#9679; </span>
-                    2018
+                    29 . 12 . 2018
                 </h3>
                 <h3 class="wedding">
                     Wedding
                 </h3>
-                <dl>
-                    <dt>Months</dt>
-                    <dd>3</dd>
-
-                    <dt>Days</dt>
-                    <dd>28</dd>
-
-                    <dt>Minutes</dt>
-                    <dd>12</dd>
-
-                    <dt>Seconds</dt>
-                    <dd>12</dd>
-                </dl>
-            </header>F
+            </header>
             <div class="banner">
                 <div class="g-content">
-                    <!-- <div>Let's Celebrate!</div> -->
                     <div class="names">
                         <div class="full_name">
                             <p class="first__name">Irena</p>
@@ -41,16 +41,17 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="divider"></div>
             </div>
         </article>
     </section>
-    <wb-our-story [style.height.px]="innerHeight"></wb-our-story>
-    <wb-theme [style.height.px]="innerHeight"></wb-theme>
-    <wb-location [style.height.px]="innerHeight"></wb-location>
-    <wb-things-to-do [style.height.px]="innerHeight"></wb-things-to-do>
+    <wb-our-story id="story" [style.height.px]="innerHeight"></wb-our-story>
+    <wb-theme id="theme" [style.height.px]="innerHeight"></wb-theme>
+    <wb-location id="location" [style.height.px]="(innerHeight + 140)"></wb-location>
+    <wb-things-to-do id="todo" [style.height.px]="innerHeight"></wb-things-to-do>
     <!-- <wb-schedule></wb-schedule> -->
     <footer>
-        hello
+        <small> However if you have any problems contact us.</small> <br/>
+
     </footer>
 </main>

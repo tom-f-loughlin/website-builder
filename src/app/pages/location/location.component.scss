@@ -12,22 +12,100 @@
 
 .content {
     width: 60%;
-    padding: 1em;
+    padding: 0 1em;
     display: flex;
     flex-direction: column;
     border-right: 3px double white;
     background-color: rgba($green, 0.3);
     color: white;
+    background: linear-gradient(to bottom, rgba(53, 78, 56, 1) 0%, rgba(255, 255, 255, 0) 100%);
     .top {
-        height: 30%;
+        height: 32%;
+        h1 {
+            font-family: $title-font;
+        }
     }
     .bottom {
-        height: 70%;
+        height: calc(68% + 10px);
+        padding: 0 1em 10px 1em;
+        margin: 0 -1em;
+        justify-content: space-around;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            z-index: 0;
+        }
+        .arrival-info {
+            .selection-arrival {
+                display: inline-flex;
+                align-items: center;
+                width: calc(100% - 20px);
+                justify-content: space-between;
+                padding: 10px;
+                margin-top: 4px;
+                border-radius: 4px;
+                background: rgba(255, 255, 255, 0.2);
+            }
+        }
+        h2 {
+            margin-bottom: 1em;
+        }
+        h3 {
+            font-size: 1.2em;
+        }
+        h4 {
+            text-decoration: underline;
+        }
+        .header {
+            margin: 10px 0;
+        }
+        .arrival-content {
+            ol {
+                padding-left: 2em;
+                list-style: lower-roman;
+                li {
+                    margin: 10px 0;
+                }
+                ul {
+                    padding-left: 2em;
+                }
+            }
+        }
+        .arrival-footer {
+            ul {
+                padding-left: 2em;
+            }
+        }
+        .arrival-content,
+        .arrival-footer,
+        .arrival-info {
+            z-index: 1;
+        }
     }
     .top,
     .bottom {
+        line-height: 110%;
         display: flex;
         flex-direction: column;
+        overflow: auto;
+        h1 {
+            font-size: 3em;
+            line-height: 100%;
+        }
+        h2 {
+            font-size: 1.8em;
+            line-height: 100%;
+            margin-bottom: 0.5em;
+        }
+        small {
+            font-size: 14px;
+            font-style: italic;
+        }
     }
 }
 
@@ -38,10 +116,90 @@
         width: 100%
     }
     .hotel {
-        background: url(../../../assets/imgs/location2.jpg);
         height: 50%;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        text-align: center;
+        background-color: $green;
+        &::after {
+            background: url(../../../assets/imgs/location2.jpg);
+            content: "";
+            opacity: 0.1;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-size: cover;
+        }
+        .accomandation,
+        h2 {
+            width: 80%;
+            color: white;
+        }
+        .accomandation {
+            text-decoration: underline;
+            font-size: 1.2em;
+        }
+        h2 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+input[type="radio"] {
+    display: none;
+    +label {
+        color: #333;
+        // font-family: Arial, sans-serif;
+        font-size: 14px;
+        span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            margin: -1px 4px 0 0;
+            vertical-align: middle;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 2px solid #FFFFFF;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+            background-repeat: no-repeat;
+            background-position: center;
+            text-align: center;
+            line-height: 44px;
+            &:hover,
+            &:active {
+                background: rgba(143, 188, 143, 0.4);
+                ;
+            }
+            svg {
+                color: #fff;
+                opacity: 0;
+                transition: all .3s ease;
+            }
+        }
+    }
+    &:checked+label span svg {
+        opacity: 1;
+    }
+    &:checked+label span {
+        background: #8fbc8f;
+    }
+}
+
+a {
+    cursor: pointer;
+    color: #8fbc8f;
+    text-decoration: underline;
+    &:hover,
+    &:active {
+        color: $secondary-grn;
+    }
+    &:visited {
+        color: $maroon;
     }
 }

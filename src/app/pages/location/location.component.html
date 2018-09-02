@@ -3,113 +3,178 @@
         <div class="top">
             <h1>Location</h1>
             <div>
-                <h4>
+                <h2>
                     The wedding will be held in <span> Czech Republic</span>.
+                    <br/>
                     <small> Near to Irca's village (H'at)</small>
-                </h4>
+                </h2>
                 <p>
-                    The venue is <span>Hotel Pod Zeleným</span> were will be celebrating the wedding. As for the ceremony
-                    we it will be taking place by the neighbouring church which is across the square from the venue
-                    <span>Kostel Narození Panny Marie</span>. Both of the wedding locations are approx. ~20minutes from Ostrava
-                    which is the closest biggest city (3rd biggest in Czech). For interesting things to do in Ostrava scroll
-                    or <a>click</a>
+                    The venue is <span>Hotel Pod Zeleným</span> were will be celebrating the wedding.
+                    <br/> As for the ceremony we it will be taking place by the neighbouring church which is across the square
+                    from the venue<span>Kostel Narození Panny Marie</span>.
+                    <br/> Both of the wedding locations are approx.
+                    <br/> ~20minutes from Ostrava(by car) which is the closest biggest city (3rd biggest in Czech).
+                    <br/> For interesting things to do in Ostrava scroll or <a>click</a>
                 </p>
             </div>
         </div>
         <div class="bottom">
-            <h1>How to get to the Wedding</h1>
-            <div>
-                First things first, you want to get to Czech Republic. For a few of you, you may have the opportunity to fly direct to Ostrava(fastest)
-                others Prague, however you can also fly to Katowice.
-            </div>
-            <div>
-                <input type="radio" name="arriving" value="prague" [(ngModel)]="userArriveType"> Prague Airport<br>
-                <input type="radio" name="arriving" value="ostrava" [(ngModel)]="userArriveType"> Ostrava Airport<br>
-                <input type="radio" name="arriving" value="katowice" [(ngModel)]="userArriveType"> Katowice<br>
+            <div class="arrival-info">
+                <h2>How to get to the Wedding</h2>
+                <div>
+                    First things first, you want to get to Czech Republic.
+                    <br/>For a few of you, you may have the opportunity to fly direct to Ostrava(fastest) others Prague,
+                    <br/> however you can also fly to Katowice.
+                    <br/> Where are you flying to?
+                </div>
+                <div class="selection-arrival">
+                    <div>
+                        <input type="radio" name="arriving" value="prague" [(ngModel)]="userArriveType">
+                        <label>
+                            <span (click)="userArriveType = 'prague'">
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </label>
+                        Prague Airport
+                    </div>
+                    <div>
+                        <input type="radio" name="arriving" value="ostrava" [(ngModel)]="userArriveType">
+                        <label>
+                            <span (click)="userArriveType = 'ostrava'">
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </label>
+                        Ostrava Airport
+                    </div>
+                    <div>
+                        <input type="radio" name="arriving" value="katowice" [(ngModel)]="userArriveType"> <label>
+                            <span (click)="userArriveType = 'katowice'">
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </label>
+                        Katowice Airport
+                    </div>
+                </div>
             </div>
 
-            <div [ngSwitch]="userArriveType">
+            <div [ngSwitch]="userArriveType" class="arrival-content">
                 <div *ngSwitchCase="'prague'">
-                    <h3> Flying to Václav Havel Airport Prague.</h3>
+                    <div class="header">
+                        <h3> Flying to Václav Havel Airport Prague.</h3>
 
-                    <i>Once at the Airport you need to get the to Center.</i>
-                    <h5>
-                        Getting to the Center:
-                    </h5>
+                        <i>Once at the Airport you need to get the to Center.</i>
+                    </div>
+                    <h4>
+                        Getting to the Venue:
+                    </h4>
                     <ol>
                         <li>
                             Buy a ticket for the AE airport bus asking to get off at Hlavní nádraží.
                         </li>
                         <li>
-                            At Hlavní nádraží, board your Train to Moravia (East Czech). There are two options: (we also suggest travelling with Leo
-                            express or Cseke Drahy)
+                            At Hlavní nádraží, board your Train to Moravia (East Czech). <br/>There are two options: (we
+                            also suggest travelling with Leo express or Cseke Drahy)
                             <ul>
-                                <li>Travel to Ostrava (19.0km from Venue)
-                                    <a href="https://goo.gl/maps/iU8FJjDv6982">
+                                <li>Travel to Ostrava (19.0km from Venue) <br/>
+                                    <a (click)="navigateTab('goo.gl/maps/iU8FJjDv6982')">
                                         Google maps from Ostrava to Hotel
                                     </a>
                                 </li>
-                                <li>Travel to Bohumnia (3.3km from Venue)
-                                    <a href="https://goo.gl/maps/yd27FUKHhnq">
+                                <li>Travel to Bohumnia (3.3km from Venue) <br/>
+                                    <a (click)="navigateTab('goo.gl/maps/yd27FUKHhnq')">
                                         Google maps from Bohumnia to Hotel
                                     </a>
                                 </li>
                             </ul>
+                        </li>
+                        <li>
+                            <p>
+                                Get out of the train station jump in a taxi (easiest way see address on the side).
+                            </p>
+                        </li>
                     </ol>
                 </div>
                 <div *ngSwitchCase="'ostrava'">
-
-                    <h3> Flying to Letiště Leoše Janáčka Airport Ostrava.</h3>
-                    <i>Once at the Airport you need to get the to Venue.</i>
-                    <h5>
+                    <div class="header">
+                        <h3> Flying to Letiště Leoše Janáčka Airport Ostrava.</h3>
+                        <i>Once at the Airport you need to get the to Venue.</i>
+                    </div>
+                    <h4>
                         Getting to the Venue:
-                    </h5>
-                    <a href="https://goo.gl/maps/qn59B5LoZxG2">
-                        Google maps from Bohumnia to Hotel
-                    </a>
+                    </h4>
+                    <ol>
+                        <li>
+                            <p>
+                                Get out of the train station jump in a taxi (easiest way see address on the side).
+                                <br/>
+                                <a (click)="navigateTab('goo.gl/maps/qn59B5LoZxG2')">
+                                    Google maps from Bohumnia to Hotel
+                                </a>
+                            </p>
+                        </li>
+                    </ol>
 
                 </div>
                 <div *ngSwitchCase="'katowice'">
-                    <h3> Flying to Katowice International Airport Poland.</h3>
-                    <i>Once at the Airport you need to get the to Venue.</i>
-                    <h5>
+                    <div class="header">
+                        <h3> Flying to Katowice International Airport Poland.</h3>
+                        <i>Once at the Airport you need to get the to Venue.</i>
+                    </div>
+                    <h4>
                         Getting to the Venue:
-                    </h5>
+                    </h4>
                     <ol>
                         <li>
                             Buy a ticket with Leo Express from the airport to Bohumín.
                         </li>
                         <li>Travel to Bohumnia</li>
                         <li>
-                            <a href="https://goo.gl/maps/qn59B5LoZxG2">
+                            <p>
+                                Get out of the train station jump in a taxi (easiest way see address on the side).
+                            </p>
+                            <a (click)="navigateTab('goo.gl/maps/qn59B5LoZxG2')">
                                 Google maps from Bohumnia to Hotel
                             </a>
                     </ol>
                 </div>
             </div>
-            <p>
-                Get out of the {{ userArriveType === 'ostrava' ? 'airport': 'train station' }} jump in a taxi (easiest way) and ask address
-                below. The address you need to ask for : Hotel Pod Zeleným - nám. Svobody 37 Starý Bohumín 735 81 Česká republika
-                <small> However if you have any problems contact us.</small>
-            </p>
-            <b>Please note Uber doesn't work however this app might http://www.liftago.cz/ though we suggest just calling
-                or hailing one</b>
+            <div class="arrival-footer">
 
-            <div>
-                Super Links:
+                <small>Please note Uber doesn't work however this app might<a (click)="navigateTab('www.liftago.cz')"> liftago </a>
+                    though we suggest just calling or hailing one </small>
 
-                <a href="https://www.cd.cz/en/default.htm"> Buy Cseke Drahy train tickets </a>
-                <a href="https://www.leoexpress.com/en"> Buy Leo Express train tickets </a>
+                <small>
+                    <ul>
+                        Super Links:
+                        <li>
+                            <a (click)="navigateTab('www.cd.cz/en/default.htm')"> Buy Cseke Drahy train tickets </a>
+                        </li>
+                        <li>
+                            <a (click)="navigateTab('www.leoexpress.com/en')"> Buy Leo Express train tickets </a>
+                        </li>
 
-                Or if you are interested in another way try looking at
-                <a href="https://www.rome2rio.com/">Rome2Rio (best travel site)</a>
-                <b> Trains are not yet avaliable to book however when they are we will email you.</b>
+                        <li>
+                            Or if you are interested in another way try looking at
+                            <a (click)="navigateTab('www.rome2rio.com')">Rome2Rio (best travel site)</a>
+                        </li>
+                    </ul>
+
+                    <b> Trains are not yet avaliable to book however when they are we will email you.</b>
+                </small>
             </div>
+
         </div>
     </article>
     <aside class="side">
         <div class="hotel">
-
+            <h2>
+                Hotel Pod Zeleným
+                <br/> nám. Svobody 37 Starý Bohumín 735 81 Česká republika
+            </h2>
+            <p class="accomandation">
+                For accomandation please book through us as we're getting a discount. <br/> so email me or contact me some
+                way I'll put you on an excel and we'll sort it out
+            </p>
         </div>
         <agm-map class="gmap" [latitude]="49.9195721" [longitude]="18.3285126" [zoom]="15">
             <agm-marker [latitude]="49.9195721" [longitude]="18.3285126"></agm-marker>

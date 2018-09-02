@@ -6,29 +6,29 @@ import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { ROUTING } from './app.routing';
-import { SharedModule } from './shared/shared.module';
 import { PAGES } from './pages';
-import { ClockService } from './pages/shared/clock.service';
+import { AccessService } from './pages/shared/access.service';
+import { AuthGuardService } from './pages/shared/access.guard.service';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ...PAGES
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    ROUTING,
-    SharedModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAvTKPpna3GIV6K5GVQ6xX3YOy98M-5kmc'
-    })
-  ],
-  providers: [
-    ClockService
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        ...PAGES
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        ROUTING,
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyAvTKPpna3GIV6K5GVQ6xX3YOy98M-5kmc'
+        })
+    ],
+    providers: [
+        AccessService,
+        AuthGuardService
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

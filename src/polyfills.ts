@@ -66,7 +66,6 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/share';
 import * as moment from 'moment';
-
 import fontawesome from '@fortawesome/fontawesome';
 
 /**

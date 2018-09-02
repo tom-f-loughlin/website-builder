@@ -1,21 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
+import { AccessService } from './pages/shared/access.service';
 
 @Component({
-  selector: 'wb-app',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'wb-app',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnDestroy {
+    constructor(private accessService: AccessService) { }
 
-  private fakeLoad = true;
+    ngOnDestroy() {
+        this.accessService.clearAccess();
+    }
 
-  constructor() {
-    // setTimeout(() => {
-    //   this.fakeLoad = false;
-    // }, 3000);
-  }
-
-//   get loading() {
-//     // return this.fakeLoad;
-//   }
 }

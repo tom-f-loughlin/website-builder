@@ -2,37 +2,40 @@
     <nav class="header">
         <h1>Things to do</h1>
     </nav>
-    <main class="wrapper">
-        <button class="slide-nav left">
+    <main class="wrapper multi-item-carousel">
+        <button class="slide-nav left" (click)="leftAction()">
             <i class="fas fa-arrow-left fa-2x"></i>
         </button>
-        <article *ngFor="let item of data; let idx = index;">
-            <div class="thing-square">
-                <div class="image" [ngClass]="getImgClass(idx)"></div>
-                <div class="wedge">
-                    <span>{{item.id}}.</span>
+        <div class="carousel-inner" #carouselInner [style.left.px]="position">
+            <article class="item" *ngFor="let item of data; let idx = index;">
+                <div class="thing-square">
+                    <div class="image" [ngClass]="getImgClass(idx)"></div>
+                    <div class="wedge">
+                        <span>{{item.id}}.</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="thing-details">
-                <h1 class="title">
-                    {{ item.title }}
-                </h1>
-                <div class="content">
-                    <h2 *ngIf="!!item.subtitle">
-                        {{item.subtitle}}
-                    </h2>
-                    <p class="thing-text">
-                        {{item.data}}
-                    </p>
+                <div class="thing-details">
+                    <h1 class="title">
+                        {{ item.title }}
+                    </h1>
+                    <div class="content">
+                        <h2 *ngIf="!!item.subtitle">
+                            {{item.subtitle}}
+                        </h2>
+                        <p class="thing-text">
+                            {{item.data}}
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="thing-actions">
-                <button (click)="navigateTab(item.website)"> Website </button>
-                <button *ngIf="item.location" (click)="navigateTab(item.location)">Google Maps</button>
-            </div>
-        </article>
-        <button class="slide-nav right">
+                <div class="thing-actions">
+                    <button (click)="navigateTab(item.website)"> Website </button>
+                    <button *ngIf="item.location" (click)="navigateTab(item.location)">Google Maps</button>
+                </div>
+            </article>
+        </div>
+
+        <button class="slide-nav right" (click)="rightAction()">
             <i class="fas fa-arrow-right fa-2x"></i>
         </button>
     </main>

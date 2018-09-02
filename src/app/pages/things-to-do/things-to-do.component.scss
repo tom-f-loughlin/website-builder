@@ -13,9 +13,9 @@ section {
             margin: 0 auto;
             text-align: center;
             font-size: 3em;
-            font-family: 'YoureInvited';
+            font-family: $title-font;
             line-height: 100%;
-            border-bottom: 2px groove burlywood;
+            color: #fff;
         }
     }
     .wrapper {
@@ -53,10 +53,11 @@ section {
         }
         article {
             min-width: calc(33.33% - 20px);
-            margin: 0 10px;
+            margin: auto 10px;
             height: 80%;
             display: inline-flex;
             flex-direction: column;
+            color: $darker-grn;
             .image {
                 height: 100%;
                 &.vitkovice {
@@ -112,7 +113,7 @@ section {
                     bottom: 1em;
                     left: 20px;
                     font-size: 2em;
-                    color: white;
+                    color: $darker-grn;
                 }
             }
         }
@@ -141,8 +142,9 @@ section {
         width: 100%;
         display: inline-flex;
         button {
+            cursor: pointer;
             height: 100%;
-            width: 50%;
+            width: 100%;
             color: #8fbc8f;
             background: white;
             border: 1px solid #8fbc8f;
@@ -155,5 +157,13 @@ section {
                 border: 1px inset white;
             }
         }
+    }
+}
+
+.multi-item-carousel {
+    .carousel-inner {
+        height: 100%;
+        display: flex;
+        position: relative;
     }
 }

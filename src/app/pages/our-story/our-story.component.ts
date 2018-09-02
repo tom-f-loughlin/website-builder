@@ -55,13 +55,13 @@ const OUR_STORY: IStories = {
     templateUrl: './our-story.component.html',
     styleUrls: ['./our-story.component.scss']
 })
-export class OurStoryComponent {
+export class OurStoryComponent implements OnInit {
 
     private storyTime: IStories = OUR_STORY;
     public storyOdd: IStory[] = [];
     public storyEven: IStory[] = [];
 
-    constructor() {
+    ngOnInit() {
         this.storyTime.story.forEach((val, idx) => {
             idx % 2 ? this.storyEven.push(val) : this.storyOdd.push(val);
         });

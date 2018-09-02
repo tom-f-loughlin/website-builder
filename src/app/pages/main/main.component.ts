@@ -16,4 +16,15 @@ export class MainComponent implements OnInit {
     onResize(event) {
         this.innerHeight = window.innerHeight;
     }
+    canDeactivate(): boolean {
+        return window.confirm('Do you want to leave the site?');
+    }
+    scroll(el: string) {
+        const tabScroll = document.getElementById(el);
+        window.scrollTo({
+            'behavior': 'smooth',
+            'left': 0,
+            'top': tabScroll.offsetTop - 60
+        });
+    }
 }
